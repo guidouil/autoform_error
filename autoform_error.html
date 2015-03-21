@@ -1,0 +1,21 @@
+<head>
+  <title>autoform_error</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#autoForm id="theForm" type="insert" collection="TheCollection"}}
+    <!-- {{> afQuickFields}} -->
+    {{#each afFieldNames}}
+      {{> afQuickField name=this options="auto"}}
+    {{/each}}
+    <div>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+  {{/autoForm}}
+</template>
